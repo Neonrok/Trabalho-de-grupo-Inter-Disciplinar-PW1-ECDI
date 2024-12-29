@@ -6,10 +6,20 @@
     <slot name="upper_bar"></slot>
     <nav class="Barra_de_navegação">
         <RouterLink to="/Home">
-            <img src="./components/icons/FRL.svg" alt="svg">
+            <img class="Home_But_IMG" src="./components/icons/FRL.svg">
         </RouterLink>
-        <div class="Navig_Buts">b</div>
-        <div class="Profile_Buts">c</div>
+        <nav class="Navig_Buts">
+            <RouterLink to="/Car">a<!--é presiso por este svg porem eu não o tenho--></RouterLink>
+            <RouterLink to="/Fight_List">a<!--é presiso por este svg porem eu não o tenho--></RouterLink>
+            <RouterLink to="/Forun_List">a<!--é presiso por este svg porem eu não o tenho--></RouterLink>
+            <RouterLink to="/Merch_List">a<!--é presiso por este svg porem eu não o tenho--></RouterLink>
+            <div class="resertch">
+              <button>P</button>
+              <input type="text">
+            </div>
+        </nav>
+        <nav v-if="Logged"></nav>
+        <button v-else>Log In</button>
     </nav>
     <RouterView/>
     <slot></slot>
@@ -47,7 +57,18 @@
         padding-left: 30px;
         padding-right: 30px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
+    }
+
+    .Home_But_IMG{
+      width: 30px;
+      height: 30px;
+    }
+
+    .Navig_Buts{
+      display: flex;
+      flex-direction: row;
     }
     .final{
         background-color: var(--CSecI);
