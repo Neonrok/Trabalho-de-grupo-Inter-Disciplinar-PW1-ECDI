@@ -5,10 +5,13 @@
 <template>
     <slot name="upper_bar"></slot>
     <nav class="Barra_de_navegação">
-        <div class="Home_But">a</div>
+        <RouterLink to="/Home">
+            <img src="./components/icons/FRL.svg" alt="svg">
+        </RouterLink>
         <div class="Navig_Buts">b</div>
         <div class="Profile_Buts">c</div>
     </nav>
+    <RouterView/>
     <slot></slot>
     <div class="final">
         <div>
@@ -25,7 +28,19 @@
         --CSecII:#FFC07F;
         --CPrin:#D62828;
     }
+
+    @media (prefers-color-scheme: dark){
+        :root{
+            --CBlack:#ECFEF3;
+            --CWhite:#0A0A16;
+            --CSecI:#FF931F;
+            --CSecII:#FFC07F;
+            --CPrin:#D62828;
+        }
+    }
+
     .Barra_de_navegação{
+        position: sticky;
         background-color: var(--CSecI);
         color: var(--CBlack);
         padding: 5px;
