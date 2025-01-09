@@ -3,7 +3,6 @@
 </script>
 
 <template>
-    <slot name="upper_bar"></slot>
     <nav class="Barra_de_navegação">
         <RouterLink to="/Home">
             <img class="Home_But_IMG" src="./components/icons/FRL.svg">
@@ -18,14 +17,15 @@
               <input type="text">
             </div>
         </nav>
-        <nav v-if="Logged"></nav>
-        <button v-else>Log In</button>
+        <div class="profile">
+            <nav v-if="Logged" class="prof_True"></nav>
+            <button v-else class="prof_False">Log In</button>
+        </div>
     </nav>
     <RouterView/>
-    <slot></slot>
     <div class="final">
         <div>
-            <p>Copyright©</p>
+            <p class="final">Copyright©</p>
         </div>
     </div>
 </template>
@@ -54,28 +54,31 @@
         background-color: var(--CSecI);
         color: var(--CBlack);
         padding: 5px;
-        padding-left: 30px;
-        padding-right: 30px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
     .Home_But_IMG{
-      width: 30px;
-      height: 30px;
+        margin-left: 30px;
+        width: 30px;
+        height: 30px;
     }
 
     .Navig_Buts{
       display: flex;
       flex-direction: row;
     }
+
+    .profile{
+        margin-right: 30px;
+    }
+
     .final{
         background-color: var(--CSecI);
-        color: var(--CBlack);
+        color: #0A0A16;
         margin-top: 0.3%;
         padding: 5px;
-        padding-left: 10px;
         padding-right: 10px;
         display: flex;
         flex-direction: row-reverse;
